@@ -1,0 +1,44 @@
+              Can use sliding window?
+                   |
+        +----------+-----------+
+        |                      |
+   Only positive nums?     Negative nums?
+        |                      |
+     Yes ✅                No ❌
+        |                      |
+Sum/length/frequency?    Use Prefix Sum + Map or Brute Force
+        |
+     Yes ✅
+        |
+Use Sliding Window
+| Data Structure | When Used                             |
+| -------------- | ------------------------------------- |
+| HashSet        | For uniqueness (e.g., substrings)     |
+| HashMap        | For character counts/frequency        |
+| Deque          | For sliding max/min (monotonic queue) |
+| Prefix Sum     | For negatives or complex conditions   |
+| Arrays         | For simple counting (fixed charset)   |
+
+| Problem                     | Pattern           | Example      |
+| --------------------------- | ----------------- | ------------ |
+| Maximum sum of k elements   | Fixed-size window | Leetcode 643 |
+| Average of subarrays size k | Fixed-size window | Leetcode 643 |
+
+| Problem                                       | Pattern                   | Notes                       |
+| --------------------------------------------- | ------------------------- | --------------------------- |
+| Leetcode 3 – Longest Substring Without Repeat | Dynamic, grow/shrink      | Use HashSet                 |
+| Leetcode 76 – Minimum Window Substring        | Dynamic + Frequency count | Use HashMap                 |
+| Leetcode 209 – Min Subarray Sum ≥ Target      | Dynamic, sum ≥ target     | Only with **positive** nums |
+
+| Problem                              | Why                   | Solution                    |
+| ------------------------------------ | --------------------- | --------------------------- |
+| Leetcode 560 – Subarray Sum Equals K | Negative allowed      | Prefix sum + HashMap        |
+| Leetcode 53 – Maximum Subarray       | Can't shrink reliably | Kadane’s Algorithm (Greedy) |
+
+# When Sliding window fails
+| Scenario                                         | Why It Fails                            | Use Instead                               |
+| ------------------------------------------------ | --------------------------------------- | ----------------------------------------- |
+| Array contains **negative numbers**              | Window sum becomes unreliable           | Prefix sum + binary search or brute force |
+| Need **exact sum** with positive & negative      | Can’t shrink window properly            | Prefix sum + HashMap (e.g., Leetcode 560) |
+| Need **global maximum/minimum** (not contiguous) | Window can’t find non-contiguous values | Greedy or Divide & Conquer                |
+| Searching for **unordered subsequence**          | Not contiguous                          | Hashing or 2 pointers                     |
