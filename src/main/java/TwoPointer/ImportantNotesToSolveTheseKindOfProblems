@@ -1,0 +1,5 @@
+| Situation                                 | Pointer Role                                              | Preserve Order |
+| ----------------------------------------- | --------------------------------------------------------- | -------------- |
+| **Keep valid elements, preserve order**   | `write` (slow) tracks where to write, `read` (fast) scans | ✅ Yes          |
+| **Remove elements, don't preserve order** | `i` scans, replace with last element, shrink length       | ❌ No           |
+| **Sorted array, remove duplicates**       | `i` is slow pointer for unique placement, `j` is fast     | ✅ Yes          |
