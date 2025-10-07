@@ -1,0 +1,83 @@
+✅ Beginner Level
+🟢 Basics & Manipulation
+
+Reverse a String
+→ Without using StringBuilder/StringBuffer.
+
+Check if a String is Palindrome
+→ Consider both with and without ignoring spaces and special characters.
+
+Count vowels and consonants in a string
+
+Remove all white spaces from a string
+
+Check if two strings are anagrams
+→ "listen" and "silent" are anagrams.
+
+Toggle case of each character
+→ "HeLLo" → "hEllO"
+
+Remove duplicate characters from a string
+→ "banana" → "ban"
+
+Find duplicate characters in a string
+
+Check if a string contains only digits or letters
+
+Compare two strings without using .equals()
+
+✅ Intermediate Level
+🟡 Patterns & Frequency
+
+Find the first non-repeating character in a string
+
+Find the most frequent character in a string
+
+Sort characters in a string by frequency
+
+Compress the string
+→ "aaabbc" → "a3b2c1"
+
+Find longest substring without repeating characters
+→ (Sliding window technique)
+
+Check if one string is a rotation of another
+→ "abcd" and "cdab" → true
+
+Check if a string is a valid palindrome after removing at most one character
+
+Implement strstr() or indexOf()
+→ Find the first occurrence of a substring.
+
+Count and extract words from a string without using split()
+
+Capitalize the first letter of each word
+→ "hello world" → "Hello World"
+
+✅ Advanced Level
+🔴 String Algorithms & Optimization
+
+Implement regular expression matching
+→ With support for . and * (LeetCode hard)
+
+Group anagrams together
+→ From an array of strings.
+
+Find the longest palindromic substring
+→ Use expand-around-center or dynamic programming.
+
+Minimum window substring containing all characters of another string
+
+Zigzag conversion (LeetCode style problem)
+
+KMP (Knuth–Morris–Pratt) pattern matching algorithm
+
+Rabin-Karp substring search
+
+Edit distance (Levenshtein distance)
+
+Implement a basic string calculator
+→ e.g., "3 + 5 * 2" → 13
+
+Decode a string
+→ "3[a2[c]]" → "accaccacc"
