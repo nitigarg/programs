@@ -8,6 +8,7 @@ public class BasicOfFastAndSlowPointer {
     public boolean hasCycle(ListNode head) {
         ListNode slow=head;
         ListNode fast=head;
+        //fast!=null is taking care of even linkedlist and fats.next!=null is taking care of odd linkedlist
         while(fast!=null && fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;
