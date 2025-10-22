@@ -3,6 +3,7 @@ package Monotonic;
 import java.util.Stack;
 
 public class NextGreaterElementII {
+    //to traverse circular array we use i%n
     public int[] nextGreaterElements(int[] nums) {
         Stack<Integer> stack=new Stack<>();
         int[] result=new int[nums.length];
