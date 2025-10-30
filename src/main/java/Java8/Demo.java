@@ -3,6 +3,8 @@ package Java8;
 import java.util.*;
 import java.util.stream.Collectors;
 
+//import static java.util.stream.Nodes.collect;
+
 public class Demo {
     public static void main (String args[]){
 //create List of Employees
@@ -30,9 +32,15 @@ public class Demo {
                 .collect(Collectors.toList());
 
         //filter by department Engineering & by age greater than 30 and then sort by age
-        list.stream().filter(e->e.getDepartment().equals("Engineering")& e.getAge()>30)
+        list.stream().filter(e->e.getDepartment().equals("Engineering") && e.getAge()>30)
                 .sorted(Comparator.comparing(Employee::getAge))
                 .collect(Collectors.toList());
+        //filter by department Engineering & by age greater than 30 and then sort
+        // by age in reverse order
+
+        list.stream().filter(e->e.getDepartment().equals("Engineering")&& e.getAge()>30)
+                        .sorted(Comparator.comparing(Employee::getAge).reversed())
+        .collect(Collectors.toList());
 
         //Get names of all employees older than 30 in uppercase, sorted alphabetically
         list.stream()
@@ -72,6 +80,18 @@ public class Demo {
         //Average age per department	   Collectors.averagingInt(Employee::getAge)
         //Find max age employee per dept	Collectors.maxBy(Comparator.comparing(Employee::getAge))
         //Collect employee names per dept	Collectors.mapping(Employee::getName, Collectors.toList())
+
+        //Important
+        //Instead of using aggregators separately we can also collect entire statitics and then
+        //use it to get count, average, min, max ,sum etc
+        Map<String,IntSummaryStatistics> statsByDept=list.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment,
+                        Collectors.summarizingInt(Employee::getAge)));
+
+        statsByDept.forEach((dept,stats)-> System.out.println(stats.getMax()+","
+        +stats.getMin()+","
+                +stats.getCount()+","
+                +stats.getAverage()+","+stats.getSum()));
 
         //Get age of employee with maximum age
       list.stream().map(emp->emp.getAge())

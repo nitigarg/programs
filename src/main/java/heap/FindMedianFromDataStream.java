@@ -4,6 +4,23 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class FindMedianFromDataStream {
+    //Heaps setup
+    //
+    //left → max-heap → stores the smaller half of numbers
+    //
+    //right → min-heap → stores the larger half of numbers
+    //
+    //We want the median to be:
+    //
+    //If odd number of elements → left.peek() (top of max-heap)
+    //
+    //If even number of elements → average of left.peek() and right.peek()
+
+    //We always maintain:
+    //
+    //left.size() can be at most 1 larger than right.size().
+    //
+    //right.size() should never exceed left.size().
     //leetcode 295
     class MedianFinder {
         private PriorityQueue<Integer> right;
@@ -21,7 +38,7 @@ public class FindMedianFromDataStream {
                 right.offer(num);
             }
             //balancing heap
-            if(left.size()>right.size()+1){
+            if(left.size()>right.size()+1){//why we wrote right.size()+1
                 right.offer(left.poll());
             }
             else if(right.size()>left.size()){

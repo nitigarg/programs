@@ -20,6 +20,8 @@ public class KthLargestElementInArray {
     //more optimal than above but still O(n log k)
     public int findKthLargestOptimal(int[] nums, int k) {
         PriorityQueue<Integer> pq=new PriorityQueue<>();
+        //PriorityQueue operations (add, remove) take O(log heap size)
+        //Heap size is at most k, so each add/remove is O(log k).
         //instead of maintaining element in descending order in pq
         // we will keep pollling until length of pq is less than or equal to k
         for(int i=0;i<nums.length;i++){  //nums = [3,2,1,5,6,4], k = 2

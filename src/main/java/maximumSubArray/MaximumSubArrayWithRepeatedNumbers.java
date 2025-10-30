@@ -11,19 +11,10 @@ public class MaximumSubArrayWithRepeatedNumbers {
     //
     //Input  : arr[] = {-1, -2, -3}, k = 3
     //Output : -1
-
+//Leetcode problem 1191
     public static int maxSumWithRepeatedConcatenations(int[] nums, int k){
-        int maxSum=Integer.MIN_VALUE;
-        int n=nums.length;
-        int currentSum=0;
-        for(int i =0; i<n*k;i++){
-            currentSum+=nums[i%n];
-            maxSum=Math.max(currentSum,maxSum);
-            if(currentSum<0){
-                currentSum=0;
-            }
-        }
-        return maxSum;
+        int result=0;
+        return result;
     }
     public static void main(String args[]){
         int[] nums={-1, 10, 20};

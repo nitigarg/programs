@@ -32,4 +32,37 @@ public class RemoveCycleFromLinkedList {
             }
         }
     }
+    //another variation of same code
+    public void removeCycleII(ListNode head) {
+        ListNode slow = head, fast = head;
+
+        // Step 1: Detect cycle
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            //when cycle detected
+            if(slow==fast){
+                // Step 2: Find start of cycle
+                slow=head;
+                ListNode prev=null;
+                while(fast!=slow){
+                    slow=slow.next;
+                    prev=fast;
+                    fast=fast.next;
+                }
+                // Step 3: If prev is null, the cycle starts at head
+                if(prev==null){//it means cycle starts at head
+                    while(fast.next!=slow){
+                        fast=fast.next;
+                    }
+                    fast.next=null;
+                }else{
+                    prev.next=null;
+                }
+                return;
+            }
+
+        }
+    }
+
 }

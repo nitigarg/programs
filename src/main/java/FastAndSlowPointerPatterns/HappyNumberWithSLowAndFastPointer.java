@@ -1,6 +1,6 @@
 package FastAndSlowPointerPatterns;
 
-public class HappyNumberWithSLowAndFastPointer {
+public class    HappyNumberWithSLowAndFastPointer {
     public boolean isHappy(int n) {
         int slow=n;
         int fast=getSumOfSquareOfDigits(n);

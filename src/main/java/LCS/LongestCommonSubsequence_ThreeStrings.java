@@ -1,7 +1,7 @@
 package LCS;
 
 public class LongestCommonSubsequence_ThreeStrings {
-    //Given three srings we have to find longest common subsequence among them
+    //Given three strings we have to find longest common subsequence among them
     static int lcs(int m, int n, int l, String a, String b, String c){
         int dp [][][]=new int [m+1][n+1][l+1];
         for(int i=0;i<=m;i++){
