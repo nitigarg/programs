@@ -2,7 +2,7 @@ package recursion.advanced;
 
 public class InviteGuestInParty {
     public static int callGuest(int n){
-        if(n==1){
+        if(n<=1){
             return 1;
         }
         int ways1=callGuest(n-1);//for calling single guest
