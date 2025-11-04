@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.Arrays;
 
-public class MoveAllOccuranceOfCharToEndOfString {
+public class  MoveAllOccuranceOfCharToEndOfString {
     //xxbcxxd-> move all x to end of String
     public static void moveAllOccurancesToEnd(String s, int index,char ele,char[]charArray,int i,int count){
         //base case
